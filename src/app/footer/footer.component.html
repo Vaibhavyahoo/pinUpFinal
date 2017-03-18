@@ -1,0 +1,82 @@
+<!-- line modal -->
+
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="lineModalLabel">title</h3>
+      </div>
+      <div class="modal-body" >
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+
+          <div class="col-sm-4">
+            <div class="image"  >
+              <div>
+              <app-file-uploader (notify)="onNotifyClicked($event)"></app-file-uploader>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-8" >
+            <div class="row">
+              <div class="form-group">
+                <input type="text" name="imageUrl" class="imageType form-control" value="{{showMessage}}" formControlName="imageUrl" placeholder="image should be .jpg or .png">
+                <!-- <button type="button" class="btn btn-success">Browse</button> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+              <input type="text" name="name" class="Tag form-control" formControlName="tags" value="{{updateData.tags}}" placeholder="Tag">
+            </div>
+          </div>
+            <div class="row">
+              <div class="form-group">
+                <select class="selectpicker form-control"  formControlName="selectpicker" style="margin-bottom:-6.8px">
+       <option value="" selected disabled>Please select</option>
+        <option>Java</option>
+        <option>Angular</option>
+        <option>Android</option>
+        <option>Ios</option>
+        <option>Angular 2 </option>
+        <option>Testing</option>
+      </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <div class="row">
+           <div class="form-group">
+          <input type="text" name="title" class="website form-control" formControlName="title" value="{{updateData.title}}" placeholder="title">
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="form-group">
+          <input type="text" name="name" class="link form-control"  formControlName="link" value="{{updateData.pinupUrl}}" placeholder="Link">
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="form-group">
+          <textarea name="name" class="desc form-control" formControlName="description" value="{{updateData.description}}"  placeholder="Description">
+        </textarea>
+         </div>
+    </div>
+
+
+    <div class="modal-footer">
+      <div class="btn-group-justified" aria-label="group button">
+        <div class="btn">
+          <button type="submit"  class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+  </div>
+  </form>
+
+</div>
+</div>
+</div>
+</div>

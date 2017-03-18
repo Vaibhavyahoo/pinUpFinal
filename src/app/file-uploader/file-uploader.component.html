@@ -1,0 +1,24 @@
+<!-- <app-footer [imageUrl]="fileName"></app-footer> -->
+
+
+<label class="uploader" ondragover="return false;"
+    [class.loaded]="loaded"
+    [style.outlineColor]="dragging ? activeColor : baseColor"
+    (dragenter)="handleDragEnter()"
+    (dragleave)="handleDragLeave()"
+    (drop)="handleDrop($event)" data-toggle="tooltip" title="click here for browse image">
+
+    <i class="icon icon-upload"
+        [style.color]="dragging
+            ? ((imageSrc.length > 0) ? overlayColor : activeColor)
+            : ((imageSrc.length > 0) ? overlayColor : baseColor)"></i>
+
+    <img style="float:left;"
+        [src]="imageSrc"
+        (load)="handleImageLoad()"
+        [class.loaded]="imageLoaded"/>
+
+    <input type="file" name="file" accept="image/*"
+        (change)="handleInputChange($event)"/>
+
+</label>
